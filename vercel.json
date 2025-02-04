@@ -9,24 +9,26 @@
             }
         }
     ],
-    "routes": [
+    "rewrites": [
         {
-            "src": "/static/(.*)",
-            "dest": "/static/$1",
-            "headers": {
-                "cache-control": "public, max-age=31536000, immutable"
-            }
+            "source": "/static/(.*)",
+            "destination": "/static/$1"
         },
         {
-            "src": "/(.*)",
-            "dest": "app.py"
+            "source": "/(.*)",
+            "destination": "/app.py"
         }
     ],
-    "env": {
-        "PYTHONUNBUFFERED": "1"
-    },
-    "regions": ["hkg1"],
     "headers": [
+        {
+            "source": "/static/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                }
+            ]
+        },
         {
             "source": "/(.*)",
             "headers": [
@@ -44,5 +46,9 @@
                 }
             ]
         }
-    ]
+    ],
+    "env": {
+        "PYTHONUNBUFFERED": "1"
+    },
+    "regions": ["hkg1"]
 }
