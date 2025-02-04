@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024, initial-scale=1.0">
+    <title>公益社群官网</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <style>
+        body {
+            background: url('../static/image/bg.jpg') no-repeat center center fixed !important;
+            background-size: cover !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- 背景动画 -->
+    <div class="animated-background">
+        <div class="gradient-overlay"></div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar frosted-glass">
+        <div class="nav-brand">
+            <div class="logo-container">
+                <span class="gradient-text">沪上青年</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('index') }}" class="nav-link">首页</a></li>
+            <li><a href="{{ url_for('about') }}" class="nav-link active">关于我们</a></li>
+            <li><a href="{{ url_for('event') }}" class="nav-link">活动新闻</a></li>
+            <li><a href="{{ url_for('contact') }}" class="nav-link">联系我们</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="gradient-text">沪上青年</span>
+            </h1>
+            <p class="hero-subtitle">在东方明珠的聚光灯下，追逐梦想，共创未来</p>
+            <div class="hero-scroll-indicator">
+                <div class="scroll-arrow"></div>
+                <span>向下滚动探索更多</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 核心价值观部分 -->
+    <section class="core-values">
+        <div class="content-wrapper">
+            <div class="section-header">
+                <h2 class="gradient-text">核心价值观</h2>
+                <p class="section-subtitle">青春的赤子之心</p>
+            </div>
+            
+            <div class="values-container">
+                <div class="value-card frosted-glass" data-value="共创">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>共创</h3>
+                            <p class="value-brief">携手并进</p>
+                            <div class="card-hover-hint">点击查看详情</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="back-content">
+                                <h3>共创精神</h3>
+                                <p class="value-detail">我们相信，唯有开放的心态，互相理解，相互成就。每一位成员都是这个大家庭不可或缺的一部分。</p>
+                                <div class="value-keywords">
+                                    <span class="keyword">开放包容</span>
+                                    <span class="keyword">团队协作</span>
+                                    <span class="keyword">共同成长</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="value-card frosted-glass" data-value="成长">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>成长</h3>
+                            <p class="value-brief">不断蜕变</p>
+                            <div class="card-hover-hint">点击查看详情</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="back-content">
+                                <h3>成长理念</h3>
+                                <p class="value-detail">生命的意义在于持续学习和突破自我。为每一位成员提供成长的沃土，让梦想在实践中生根发芽。</p>
+                                <div class="value-keywords">
+                                    <span class="keyword">持续学习</span>
+                                    <span class="keyword">自我突破</span>
+                                    <span class="keyword">梦想实践</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="value-card frosted-glass" data-value="担当">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>担当</h3>
+                            <p class="value-brief">回馈社会</p>
+                            <div class="card-hover-hint">点击查看详情</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="back-content">
+                                <h3>社会担当</h3>
+                                <p class="value-detail">青年不仅要关注自我成长，更要肩负社会责任。鼓励每一位成员用行动书写社会价值。</p>
+                                <div class="value-keywords">
+                                    <span class="keyword">责任担当</span>
+                                    <span class="keyword">社会价值</span>
+                                    <span class="keyword">青年力量</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 缘起初心部分 -->
+    <section class="core-values">
+        <div class="content-wrapper">
+            <div class="section-header">
+                <h2 class="gradient-text">缘起初心</h2>
+                <p class="section-subtitle">一个温暖的开始</p>
+            </div>
+            
+            <div class="story-cards">
+                <div class="story-card frosted-glass">
+                    <div class="card-inner">
+                        <div class="story-icon">🍷</div>
+                        <h3>一次小酌</h3>
+                        <p>四位不同行业的沪上青年在一次线下聚会中，围坐畅聊：聊工作、聊事业、聊梦想、聊未来。</p>
+                    </div>
+                </div>
+                
+                <div class="story-card frosted-glass">
+                    <div class="card-inner">
+                        <div class="story-icon">💡</div>
+                        <h3>灵感迸发</h3>
+                        <p>聊至兴起，其中一位忽然提议：今天这样的小酌，我们何不每月组织一次？</p>
+                    </div>
+                </div>
+                
+                <div class="story-card frosted-glass">
+                    <div class="card-inner">
+                        <div class="story-icon">🏠</div>
+                        <h3>温暖空间</h3>
+                        <p>传播温暖，为更多追梦青年建造一个可以放心倾诉的"空间"。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 我们的原则部分 -->
+    <section class="core-values">
+        <div class="content-wrapper">
+            <div class="section-header">
+                <h2 class="gradient-text">我们的原则</h2>
+                <p class="section-subtitle">修己达人</p>
+            </div>
+            
+            <div class="principles-card frosted-glass">
+                <div class="principles-content">
+                    <ul class="principles-list">
+                        <li class="principle-item">
+                            <span class="principle-icon">🎯</span>
+                            <div class="principle-text">
+                                <h4>小聚时，我们不聊工作</h4>
+                                <p>放下工作的压力，享受纯粹的交流</p>
+                            </div>
+                        </li>
+                        <li class="principle-item">
+                            <span class="principle-icon">🌟</span>
+                            <div class="principle-text">
+                                <h4>小酌时，我们只为放松</h4>
+                                <p>放下紧绷的心弦，拥抱轻松的氛围</p>
+                            </div>
+                        </li>
+                        <li class="principle-item">
+                            <span class="principle-icon">⚡</span>
+                            <div class="principle-text">
+                                <h4>充电后，更好地工作</h4>
+                                <p>放下前行的负担，短暂的休息是为了更好地出发</p>
+                            </div>
+                        </li>
+                        <li class="principle-item">
+                            <span class="principle-icon">🎭</span>
+                            <div class="principle-text">
+                                <h4>先悦己，再悦人</h4>
+                                <p>滋养自己的内在，方能温暖他人</p>
+                            </div>
+                        </li>
+                        <li class="principle-item">
+                            <span class="principle-icon">🌱</span>
+                            <div class="principle-text">
+                                <h4>修好己身，志在达人</h4>
+                                <p>雕琢心灵的高度，即是梦想的模样</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 玩创计划部分 -->
+    <section class="core-values">
+        <div class="content-wrapper">
+            <div class="section-header">
+                <h2 class="gradient-text">玩创计划</h2>
+                <p class="section-subtitle">让创意绽放光彩</p>
+            </div>
+            
+            <!-- 创意活动部分 -->
+            <div class="plan-section">
+                <div class="section-title">
+                    <div class="title-icon">🎨</div>
+                    <h3>创意活动</h3>
+                </div>
+                
+                <div class="activities-grid">
+                    <div class="activity-card frosted-glass">
+                        <div class="activity-header">
+                            <span class="activity-icon">🏃</span>
+                            <h4>主题创意风暴</h4>
+                        </div>
+                        <div class="activity-content">
+                            <p>一天内聚集来自不同领域的青年头脑风暴，针对指定议题快速生成方案。</p>
+                            <div class="activity-features">
+                                <div class="feature">
+                                    <span class="feature-icon">⚡</span>
+                                    <span>创新协作</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">🔄</span>
+                                    <span>快速原型</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card frosted-glass">
+                        <div class="activity-header">
+                            <span class="activity-icon">🎭</span>
+                            <h4>即时创作工作坊</h4>
+                        </div>
+                        <div class="activity-content">
+                            <p>从即兴戏剧到艺术创作，为成员提供宽松自由的环境。</p>
+                            <div class="activity-features">
+                                <div class="feature">
+                                    <span class="feature-icon">🎪</span>
+                                    <span>表达艺术</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">🚀</span>
+                                    <span>突破创新</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 项目孵化部分 -->
+            <div class="plan-section">
+                <div class="section-title">
+                    <div class="title-icon">🚀</div>
+                    <h3>项目孵化</h3>
+                </div>
+                
+                <div class="incubation-grid">
+                    <div class="incubation-card frosted-glass">
+                        <div class="card-header">
+                            <span class="card-icon">👥</span>
+                            <h4>创意导师计划</h4>
+                        </div>
+                        <div class="card-content">
+                            <p>跨界大咖导师助力，让成长之路更高效。</p>
+                            <ul class="benefits-list">
+                                <li><span>✦</span> 专业指导</li>
+                                <li><span>✦</span> 经验分享</li>
+                                <li><span>✦</span> 资源对接</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="incubation-card frosted-glass">
+                        <div class="card-header">
+                            <span class="card-icon">🔗</span>
+                            <h4>资源链接平台</h4>
+                        </div>
+                        <div class="card-content">
+                            <p>搭建青年创业与企业合作的桥梁，助力创意落地。</p>
+                            <ul class="benefits-list">
+                                <li><span>✦</span> 项目对接</li>
+                                <li><span>✦</span> 创业指导</li>
+                                <li><span>✦</span> 落地支持</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 在玩创计划部分添加更多内容 -->
+    <section class="core-values">
+        <div class="content-wrapper">
+            <div class="section-header">
+                <h2 class="gradient-text">玩创精神融入团队文化</h2>
+                <p class="section-subtitle">创新无界，玩创无限</p>
+            </div>
+            
+            <div class="culture-grid">
+                <div class="culture-card frosted-glass">
+                    <div class="culture-icon">🌈</div>
+                    <h3>开放与包容</h3>
+                    <p>在沪上青年，没有"天马行空"这回事，只有"探索无限可能"。我们尊重每一个有趣、独特的想法。</p>
+                </div>
+                
+                <div class="culture-card frosted-glass">
+                    <div class="culture-icon">🤝</div>
+                    <h3>跨界与协作</h3>
+                    <p>我们相信，不同背景的碰撞会产生更多惊喜。沪上青年倡导"无边界合作"，让成员与不同领域的伙伴共同推动创新。</p>
+                </div>
+                
+                <div class="culture-card frosted-glass">
+                    <div class="culture-icon">🚀</div>
+                    <h3>挑战与突破</h3>
+                    <p>玩创的过程注定伴随挑战，但正是这种"敢玩、敢试、敢失败"的态度，造就了许多意想不到的成功。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 百师千青计划部分 -->
+    <section class="core-values">
+        <div class="content-wrapper">
+            <div class="section-header">
+                <h2 class="gradient-text">沪上青年"百师千青"行动计划</h2>
+                <p class="section-subtitle">100位青年导师 | 1000位逐梦青年</p>
+            </div>
+            
+            <div class="action-plan-container">
+                <!-- 第一行：数字展示 -->
+                <div class="numbers-showcase">
+                    <div class="number-group">
+                        <div class="big-number">
+                            <span class="number-animation">100+</span>
+                            <div class="number-glow"></div>
+                        </div>
+                        <div class="number-label">青年导师</div>
+                    </div>
+                    <div class="vertical-line"></div>
+                    <div class="number-group">
+                        <div class="big-number">
+                            <span class="number-animation">1000+</span>
+                            <div class="number-glow"></div>
+                        </div>
+                        <div class="number-label">逐梦青年</div>
+                    </div>
+                </div>
+
+                <!-- 第二行：愿景宣言 -->
+                <div class="vision-statement">
+                    <div class="vision-main">这里是双向奔赴的"我们"</div>
+                    <div class="vision-sub">我们没有领导，因为每个人都是自己的领导！</div>
+                </div>
+
+                <!-- 第三行：行动纲领 -->
+                <div class="action-items">
+                    <div class="action-item">
+                        <div class="action-icon-wrapper">
+                            <span class="action-icon">🎭</span>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <span class="action-text">共同成长</span>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-icon-wrapper">
+                            <span class="action-icon">🤝</span>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <span class="action-text">互帮互助</span>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-icon-wrapper">
+                            <span class="action-icon">💡</span>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <span class="action-text">创新突破</span>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-icon-wrapper">
+                            <span class="action-icon">🚀</span>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <span class="action-text">追逐梦想</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="join-us frosted-glass">
+        <h3>加入我们</h3>
+        <p>与沪上青年一起，书写属于你的青春篇章</p>
+        <button class="join-button">
+            <span>立即加入</span>
+            <div class="button-effect"></div>
+        </button>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/player.js') }}"></script>
+</body>
+</html> 

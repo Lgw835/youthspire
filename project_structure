@@ -1,0 +1,14 @@
+website/
+  ├── static/
+  │   ├── css/
+  │   │   └── style.css
+  │   ├── js/
+  │   │   └── main.js
+  │   └── images/
+  │       └── background.jpg
+  ├── templates/
+  │   ├── index.html
+  │   ├── about.html
+  │   ├── news.html
+  │   └── contact.html
+  └── app.py 

@@ -1,0 +1,321 @@
+:root {
+    --light-blue: #e6f3ff;
+    --light-purple: #f0e6ff;
+    --accent-blue: #4a90e2;
+    --accent-purple: #9b6dff;
+    --line-color: #8b75ff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+    margin: 3rem 0;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    animation: fadeInDown 1.5s ease-out;
+    margin-bottom: 4rem;
+}
+
+.timeline {
+    width: 100%;
+    position: relative;
+    padding-top: 2rem;
+}
+
+/* 主时间线 */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: linear-gradient(180deg, 
+        var(--accent-blue) 0%,
+        var(--accent-purple) 50%,
+        var(--accent-blue) 100%);
+    transform: translateX(-50%);
+    border-radius: 3px;
+    opacity: 0.3;
+}
+
+/* 动态时间线 */
+.timeline::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, 
+        var(--accent-blue) 0%,
+        var(--accent-purple) 50%,
+        var(--accent-blue) 100%);
+    clip-path: path('M0,0 C20,200 -20,400 0,600 C20,800 -20,1000 0,1200');
+    animation: pathDraw 3s ease-out forwards;
+    z-index: 1;
+}
+
+.event-card {
+    width: 45%;
+    margin: 4rem 0;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 20px;
+    padding: 1.8rem;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.event-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.event-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    background: rgba(255, 255, 255, 1);
+}
+
+.event-card:nth-child(odd) {
+    margin-left: auto;
+}
+
+/* 连接点动画 */
+.event-card::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    background: white;
+    border: 4px solid var(--line-color);
+    border-radius: 50%;
+    z-index: 2;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 0 6px rgba(139, 117, 255, 0.2);
+}
+
+.event-card:hover::before {
+    transform: scale(1.4);
+    box-shadow: 0 0 0 8px rgba(139, 117, 255, 0.3);
+    border-color: var(--accent-blue);
+}
+
+.event-card:nth-child(odd)::before {
+    left: -76px;
+    animation: pulsePoint 3s infinite;
+}
+
+.event-card:nth-child(even)::before {
+    right: -76px;
+    animation: pulsePoint 3s infinite;
+}
+
+/* 优化的曲线连接线 */
+.event-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--line-color), var(--accent-purple));
+    transition: all 0.4s ease;
+    width: 60px;
+}
+
+.event-card:nth-child(odd)::after {
+    left: -60px;
+    transform: rotate(-15deg);
+    transform-origin: right center;
+}
+
+.event-card:nth-child(even)::after {
+    right: -60px;
+    transform: rotate(15deg);
+    transform-origin: left center;
+}
+
+.event-card:hover::after {
+    width: 70px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+}
+
+.event-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 1.2rem;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.event-card:hover .event-image {
+    transform: scale(1.05);
+}
+
+.event-date {
+    color: var(--accent-purple);
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    transition: all 0.4s ease;
+    opacity: 0.9;
+}
+
+.event-card:hover .event-date {
+    transform: translateX(8px);
+    color: var(--accent-blue);
+    opacity: 1;
+}
+
+.event-title {
+    color: #333;
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    transition: all 0.4s ease;
+    font-weight: 600;
+}
+
+.event-card:hover .event-title {
+    color: #000;
+    transform: translateX(5px);
+}
+
+.event-description {
+    color: #666;
+    line-height: 1.8;
+    transition: all 0.4s ease;
+    font-size: 1.05rem;
+}
+
+.event-card:hover .event-description {
+    color: #444;
+}
+
+.event-content {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes pulsePoint {
+    0% { transform: scale(1); box-shadow: 0 0 0 6px rgba(139, 117, 255, 0.2); }
+    50% { transform: scale(1.2); box-shadow: 0 0 0 10px rgba(139, 117, 255, 0.3); }
+    100% { transform: scale(1); box-shadow: 0 0 0 6px rgba(139, 117, 255, 0.2); }
+}
+
+@keyframes pathDraw {
+    from {
+        clip-path: path('M0,0 C20,200 -20,400 0,600 C20,800 -20,1000 0,1200');
+        opacity: 0;
+    }
+    to {
+        clip-path: path('M0,0 C20,200 -20,400 0,600 C20,800 -20,1000 0,1200');
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline::before, .timeline::after {
+        left: 40px;
+    }
+    
+    .event-card {
+        width: calc(100% - 80px);
+        margin-left: 80px !important;
+    }
+
+    .event-card::before {
+        left: -55px !important;
+    }
+
+    .event-card::after {
+        left: -35px !important;
+        transform: rotate(0deg) !important;
+        width: 35px !important;
+    }
+} 
+
+/* 头部区域样式 */
+.header-section {
+    text-align: center;
+    padding: 4rem 0;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1.5s ease-out;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: rgba(45, 55, 72, 0.9);
+    margin-bottom: 3rem;
+    animation: fadeIn 1.5s ease-out 0.5s both;
+}
+
+/* 调整容器样式 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 时间线容器样式调整 */
+.timeline {
+    width: 100%;
+    position: relative;
+    padding-top: 2rem;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .header-section {
+        padding: 3rem 1rem;
+    }
+    
+    .title {
+        font-size: 2.2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+} 
+
+/* 添加背景图片样式 */
+body {
+    position: relative;
+    background: url('../image/bg2.jpg') no-repeat center center fixed;
+    background-size: cover;
+}

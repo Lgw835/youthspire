@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024, initial-scale=1.0">
+    <title>公益社群官网</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/event.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 背景动画 -->
+    <div class="animated-background">
+        <div class="gradient-overlay"></div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar frosted-glass">
+        <div class="nav-brand">
+            <div class="logo-container">
+                <span class="gradient-text">沪上青年</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('index') }}" class="nav-link">首页</a></li>
+            <li><a href="{{ url_for('about') }}" class="nav-link">关于我们</a></li>
+            <li><a href="{{ url_for('event') }}" class="nav-link active">活动新闻</a></li>
+            <li><a href="{{ url_for('contact') }}" class="nav-link">联系我们</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="header-section">
+            <h1 class="title gradient-text">我们的活动历程</h1>
+            <p class="subtitle">记录每一个精彩瞬间</p>
+        </div>
+        <div class="timeline">
+            <div class="event-card">
+                <a href="https://mp.weixin.qq.com/s/wx5xZV8IGCV67Oqy07WYPg" style="text-decoration: none;">
+                    <img src="../static/image/Activity_xiaojudeng.jpg" alt="活动-小桔灯" class="event-image">
+                    <div class="event-date">2024年11月16日-12月31日</div>
+                    <h3 class="event-title">一盏桔灯亮 万家灯火明</h3>
+                    <p class="event-description">"小桔灯"经典诵读，由沪上青年与科技大咖杨腾霄发起，以诗词传递温暖和希望，让诗词之美温润心灵，以传统文化之光照亮都市青年，在社区播撒人文暖意。</p>
+                </a>
+            </div>
+
+            <div class="event-card">
+                <a href="https://mp.weixin.qq.com/s/e49nRaZdlcwPOndveyo10A" style="text-decoration: none;">
+                        <img src="../static/image/Activity_Walk with Her to Build a New Chapter in Public Welfare.jpg" alt="与她同行-共筑公益新篇章" class="event-image">
+                        <div class="event-date">2024年11月27日</div>
+                        <h3 class="event-title">与"她" 同行 共筑公益新篇章</h3>
+                        <p class="event-description">沪上青年与宝山区妇联携手，通过"小桔灯经典诵读"等公益项目，共同推动社会化家庭教育，促进大学生就业，营造和谐家庭环境，点亮更多人的追梦人生。</p>
+                </a>
+            </div>
+
+            <div class="event-card">
+                <a href="https://mp.weixin.qq.com/s/jlkRE_jsxGHD-3AVyb7e4Q" style="text-decoration: none;">
+                    <img src="../static/image/Interview_yaguo.jpg" alt="专访-亚国" class="event-image">
+                    <div class="event-date">2024年11月25日</div>
+                    <h3 class="event-title">专访沪上青年发起人之一徐亚国|成为一名真正的"全职公益人"</h3>
+                    <p class="event-description">徐亚国，沪上青年发起人，历经四次裸辞，坚守公益初心，与一群志同道合者共创未来，传递爱与希望。</p>
+                </a>
+            </div>
+
+            <div class="event-card">
+                <a href="https://mp.weixin.qq.com/s/P5TpmUdz6dAG2kuKy8DNRQ" style="text-decoration: none;">
+                    <img src="../static/image/Interview_yangtengxiao.jpg" alt="专访-杨腾霄" class="event-image">
+                    <div class="event-date">2024年10月08日</div>
+                    <h3 class="event-title">专访纽盾科技创始人杨腾霄|每个人都需要拔出自己的智慧宝剑</h3>
+                    <p class="event-description">杨腾霄，纽盾科技创始人，通过辟谷养生与佛学智慧影响万人。他倡导创业者直面孤独，发挥潜能，利用AI时代机遇，传承传统文化精髓。</p>
+                </a>
+            </div>
+
+            <div class="event-card">
+                <a href="https://mp.weixin.qq.com/s/0kgXhd0hJh62wslxxgFbPg" style="text-decoration: none;">
+                    <img src="../static/image/Interview_taoran.jpg" alt="专访-陶然" class="event-image">
+                    <div class="event-date">2024年8月8日</div>
+                    <h3 class="event-title">"小路访谈"：破除35岁魔咒，看陶然如何逆风翻盘</h3>
+                    <p class="event-description">陶然，跨界传奇女性，从首席记者到公益领袖，再到甜品品牌与家政服务创始人，她的故事印证，35岁不是终点，而是绽放新篇的起点。</p>
+                </a>
+            </div>
+
+            <div class="event-card">
+                <a href="https://mp.weixin.qq.com/s/5ZT6xVx8h2U2F86zM5iAWg" style="text-decoration: none;">
+                    <img src="../static/image/Interview_hejianguo.jpg" alt="专访-何建国" class="event-image">
+                    <div class="event-date">2024年7月23日</div>
+                    <h3 class="event-title">专访模具技术专家何建国|让模具专精人才拥有新方向</h3>
+                    <p class="event-description">何师傅，模具行业资深专家，创立"新方向"模具公司，以匠心精神赢得客户信赖。他注重品质、用心带徒。他既是行业翘楚，更是桃李满门的良师，用专业与执着助力中国制造迈向精品时代。</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 添加 JavaScript -->
+    <script src="{{ url_for('static', filename='js/event.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/player.js') }}"></script>
+</body>
+</html>

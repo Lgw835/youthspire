@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024, initial-scale=1.0">
+    <title>公益社群官网</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <style>
+        body {
+            background: url('../static/image/bg2.jpg') no-repeat center center fixed !important;
+            background-size: cover !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- 背景动画 -->
+    <div class="animated-background">
+        <div class="gradient-overlay"></div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar frosted-glass">
+        <div class="nav-brand">
+            <div class="logo-container">
+                <span class="gradient-text">沪上青年</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('index') }}" class="nav-link active">首页</a></li>
+            <li><a href="{{ url_for('about') }}" class="nav-link">关于我们</a></li>
+            <li><a href="{{ url_for('event') }}" class="nav-link">活动新闻</a></li>
+            <li><a href="{{ url_for('contact') }}" class="nav-link">联系我们</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="gradient-text main-title">
+                    <span class="word-animation"></span>
+                </h1>
+                <div class="text-container">
+                    <p class="animate-text-delay hero-subtitle">放下前行的负担，短暂的休息是为了更好地出发</p>
+                    <div class="divider"></div>
+                    <p class="subtitle animate-text-delay">与沪上青年一起，书写属于你的青春篇章</p>
+                </div>
+            </div>
+            <div class="cta-buttons">
+                <button class="btn primary glow-effect">
+                    <span>立即加入</span>
+                    <div class="glow-container">
+                        <div class="glow"></div>
+                    </div>
+                </button>
+                <a href="{{ url_for('about') }}" class="btn secondary shine-effect">了解更多</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 追梦光芒板块 -->
+    <section class="dream-light">
+        <div class="container">
+            <div class="dream-card frosted-glass">
+                <div class="dream-header">
+                    <h2 class="dream-title">追梦光芒</h2>
+                    <span class="subtitle_1">一沪上青年之歌</span>
+                </div>
+
+                <div class="dream-content-wrapper">
+                    <div class="lyrics-scroll frosted-glass">
+                        <div class="verse-container">
+                            <div class="verse frosted-glass">
+                                <p>沪上青年，梦想起航</p>
+                                <p>心中有火，眼中有光</p>
+                                <p>玩创路上，同心同向</p>
+                                <p>青春无畏，光芒万丈</p>
+                            </div>
+                            
+                            <div class="verse">
+                                <p>在这座繁华的城</p>
+                                <p>我们相遇在追梦的晨</p>
+                                <p>不同的路，相同的心</p>
+                                <p>沪上青年，共铸明天</p>
+                            </div>
+                            
+                            <div class="verse">
+                                <p>月下小酌，围炉畅谈</p>
+                                <p>分享经验，筑梦成长</p>
+                                <p>历经风雨，见证彩虹</p>
+                                <p>沪上青年，共创辉煌</p>
+                            </div>
+                            
+                            <div class="verse">
+                                <p>健康行动，静心启智</p>
+                                <p>生活体悟，日日新鲜</p>
+                                <p>美食DIY，艺术品鉴</p>
+                                <p>玩创之旅，我们领先</p>
+                            </div>
+                            
+                            <div class="verse">
+                                <p>追梦路上，你我并肩</p>
+                                <p>携手同行，正心正念</p>
+                                <p>先悦己心，再照人间</p>
+                                <p>青春不老，梦想恒远</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="side-content">
+                        <div class="author-info frosted-glass">
+                            <img src="../static/image/Youth_liyimei.png" alt="沪上青年" class="author-image">
+                            <div class="author-details">
+                                <h3>李羿玫</h3>
+                                <p>资深媒体人，中国传媒大学硕士，财经领域研究者。热爱生活，乐于挑战，追求不断成长的斜杠青年。</p>
+                            </div>
+                        </div>
+
+                        <div class="story-section frosted-glass">
+                            <div class="story-content">
+                                <h3>创作背景</h3>
+                                <p class="preview-text">《追梦光芒》这首歌曲的创作灵感源自一个充满活力与梦想的青年公益团队——沪上青年。这首歌曲描述了沪上青年的真实故事...</p>
+                                <button class="learn-more-btn">
+                                    <span>了解更多</span>
+                                    <svg class="arrow-icon" viewBox="0 0 24 24">
+                                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 添加模态对话框 -->
+    <div class="modal-backdrop hidden">
+        <div class="modal-container frosted-glass">
+            <div class="modal-header">
+                <h2>创作背景</h2>
+                <button class="close-btn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-content">
+                <p>《追梦光芒》这首歌曲的创作灵感源自一个充满活力与梦想的青年公益团队——沪上青年。</p>
+                <p>在一次线下小酌聚会中，四位不同行业的青年共同分享了他们的工作和生活经验，他们意识到需要一个平台来支持和鼓励彼此的追梦之旅。由此，沪上青年公益社群应运而生，它不仅是一个社交平台，更是一个精神家园，让青年们在忙碌和压力之余，找到归属感和动力。</p>
+                <p>沪上青年的核心理念是"玩创"，在玩乐中创造，在创造中成长。他们通过各种活动，如露营、徒步、艺术体验等，来提升心能，绽放光芒，成为更好的自己。这个群体不仅包括在职场、创业路上的青年，还有一批愿意成为导师、助力青年成长的专业人士。</p>
+                <p>《追梦光芒》的歌词和旋律充满活力，反映了沪上青年的精神面貌。歌曲中"沪上青年，梦想起航"和"心中有火，眼中有光"等歌词，展现了他们的热情和坚定。</p>
+                <p>通过这首歌，我们希望能够传递出沪上青年的正能量，鼓励更多的青年人融入到这个充满活力的大家庭中，一起为实现自己的梦想而努力。</p>
+            </div>
+            <div class="modal-footer">
+                <button class="return-btn">
+                    <span>返回</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/player.js') }}"></script>
+</body>
+</html> 

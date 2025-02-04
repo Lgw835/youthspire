@@ -1,0 +1,26 @@
+# Flask 及其扩展
+Flask==3.1.0
+Flask-Limiter==3.5.0
+Flask-Caching==2.1.0
+Werkzeug>=3.1.0
+
+# Redis 支持
+redis==5.0.1
+hiredis==2.3.2  # Redis 的 C 实现，提供更好的性能
+
+# WSGI 服务器
+gunicorn==21.2.0
+gevent==23.9.1  # 用于 gunicorn 的异步工作模式
+
+# 安全相关
+PyJWT==2.8.0
+cryptography==41.0.7
+
+# 工具包
+limits==3.6.0  # Flask-Limiter 的依赖
+cachetools==5.3.2
+requests==2.31.0
+python-dotenv==1.0.0  # 用于加载环境变量
+
+# 性能监控（可选）
+prometheus-flask-exporter==0.22.4

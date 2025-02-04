@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024, initial-scale=1.0">
+    <title>公益社群官网</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 背景动画 -->
+    <div class="animated-background">
+        <div class="gradient-overlay"></div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar frosted-glass">
+        <div class="nav-brand">
+            <div class="logo-container">
+                <span class="gradient-text">沪上青年</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('index') }}" class="nav-link">首页</a></li>
+            <li><a href="{{ url_for('about') }}" class="nav-link">关于我们</a></li>
+            <li><a href="{{ url_for('event') }}" class="nav-link">活动新闻</a></li>
+            <li><a href="{{ url_for('contact') }}" class="nav-link active">联系我们</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="header-section">
+            <h1 class="title gradient-text">联系我们</h1>
+            <p class="subtitle">关注我们，获取更多资讯</p>
+        </div>
+
+        <div class="qr-container">
+            <!-- 社交媒体卡片 -->
+            <!-- <div class="social-card frosted-glass">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="{{ url_for('static', filename='image/qr/wechat.png') }}" alt="微信二维码">
+                        <h3>微信</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>扫描二维码</p>
+                        <p>添加我们的微信</p>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="social-card frosted-glass">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="../static/image/contact_shipinhao.png" alt="视频号二维码">
+                        <h3>视频号</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>关注视频号</p>
+                        <p>了解最新动态</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-card frosted-glass">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="../static/image/contact_douyin.png" alt="抖音二维码">
+                        <h3>抖音</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>关注抖音号</p>
+                        <p>获取精彩视频</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-card frosted-glass">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="../static/image/contact_xiaohongshu.png" alt="小红书二维码">
+                        <h3>小红书</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>关注小红书</p>
+                        <p>分享精彩生活</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-card frosted-glass">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="../static/image/contact_bilibili.png" alt="bilibili二维码">
+                        <h3>哔哩哔哩</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>关注B站账号</p>
+                        <p>观看更多视频</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-card frosted-glass">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="../static/image/contact_weibo.png" alt="微博二维码">
+                        <h3>微博</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>关注微博</p>
+                        <p>分享精彩生活</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/player.js') }}"></script>
+</body>
+</html>
