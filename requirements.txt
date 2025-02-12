@@ -5,7 +5,7 @@ Flask-Caching==2.1.0
 Werkzeug>=3.1.0
 
 # Redis 支持
-redis==5.0.1
+redis==5.2.1
 hiredis==2.3.2  # Redis 的 C 实现，提供更好的性能
 
 # WSGI 服务器
